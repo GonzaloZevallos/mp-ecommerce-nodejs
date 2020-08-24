@@ -67,8 +67,6 @@ module.exports = {
 
       let preference = response.body;
 
-      return res.send(preference);
-
       return res.render("detail", { ...req.query, preference });
     } catch (e) {
       throw new Error(e.name + ": " + e.message);
