@@ -6,13 +6,11 @@ var app = express();
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
+// My Router
 
-app.get('/detail', function (req, res) {
-    res.render('detail', req.query);
-});
+const router = require("./routers");
+
+app.use('/', router);
 
 app.use(express.static('assets'));
  
