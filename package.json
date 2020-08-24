@@ -2,13 +2,13 @@
   "name": "mp-ecommerce-nodejs",
   "version": "1.0.0",
   "description": "Este e-commerce de ejemplo será la base para la integración de MercadoPago con `nodejs`.",
-  "main": "app.js",
+  "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "start": "node app.js",
-    "startdev": "nodemon app.js"
+    "start": "node index.js",
+    "startdev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
