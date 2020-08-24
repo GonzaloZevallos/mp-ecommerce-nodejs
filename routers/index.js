@@ -15,7 +15,7 @@ router.get("/failure", mpController.failure);
 
 router.get("/pending", mpController.pending);
 
-// router.get("/notifications", mpController.detail);
+router.post("/notifications", mpController.notifications);
 
 
 module.exports = router;

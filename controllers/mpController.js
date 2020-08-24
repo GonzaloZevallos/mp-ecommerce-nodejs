@@ -3,6 +3,7 @@ const mercadopago = require("mercadopago");
 mercadopago.configure({
   access_token:
     "APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398",
+  integrator_id: "dev_24c65fb163bf11ea96500242ac130004",
 });
 
 module.exports = {
@@ -14,13 +15,11 @@ module.exports = {
       items: [
         {
           id: 1234,
-          title: "Samsung Galaxy S9",
-          currency_id: "ARS",
-          picture_url:
-            "http://gzevallos-mp-ecommerce-nodejs.herokuapp.com/assets/003.jpg",
+          title: req.query.title,
+          picture_url: `http://gzevallos-mp-ecommerce-php.herokuapp.com${req.query.img.slice(1)}`,
           description: "Dispositivo móvil de Tienda e-commerce",
-          quantity: 1,
-          unit_price: 15000.0,
+          quantity: Number(req.query.unit),
+          unit_price: Number(req.query.price),
         },
       ],
       payer: {
@@ -66,6 +65,8 @@ module.exports = {
 
       let preference = response.body;
 
+      return res.send(preference);
+
       return res.render("detail", { ...req.query, preference });
     } catch (e) {
       throw new Error(e.name + ": " + e.message);
@@ -75,7 +76,7 @@ module.exports = {
     return res.render("home", {
       ...req.query,
       status: "Success",
-      success: true
+      success: true,
     });
   },
   failure(req, res) {
@@ -84,4 +85,9 @@ module.exports = {
   pending(req, res) {
     return res.render("home", { status: "Pending" });
   },
+  notifications(req, res) {
+    console.log(req.body);
+
+    return res.status_code(200);
+  }
 };
