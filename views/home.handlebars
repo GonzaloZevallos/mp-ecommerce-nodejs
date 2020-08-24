@@ -40,7 +40,7 @@
                                 </div>
                             </div>
 
-                            {{#with status}}
+                            {{#if status}}
                             
                             <div>
                                 <h2>
@@ -48,9 +48,9 @@
                                 </h2>
                             </div>
                             
-                            {{/with}}
+                            {{/if}}
                             
-                            {{#with success}}
+                            {{#if success}}
                             
                             <div style="text-align: center;">
                                 <p>"Payment Method:" {{ payment_type }}</p>
@@ -58,7 +58,7 @@
                                 <p>"Payment ID:" {{ collection_id }}</p>
                             </div>
                             
-                            {{/with}}
+                            {{/if}}
 
                             <div class="as-accessories-results  as-search-desktop">
                                 <div class="column as-search-filters" aria-hidden="false" id="as-search-filters" style="position: relative;">
