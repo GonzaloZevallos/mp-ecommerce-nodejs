@@ -1,7 +1,7 @@
-var express = require('express');
-var exphbs  = require('express-handlebars');
- 
-var app = express();
+const express = require('express');
+const exphbs  = require('express-handlebars');
+const port = process.env.PORT || 3000;
+const app = express();
  
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -15,5 +15,5 @@ app.use('/', router);
 app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
- 
-app.listen(3000);
+
+app.listen(port);
