@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/GonzaloZevallos/mp-ecommerce-nodejs#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "mercadopago": "^1.3.2"

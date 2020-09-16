@@ -2,6 +2,9 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const port = process.env.PORT || 3000;
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
  
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
