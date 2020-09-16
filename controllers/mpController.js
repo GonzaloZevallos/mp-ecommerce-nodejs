@@ -1,4 +1,6 @@
 const mercadopago = require("mercadopago");
+const fs = require("fs");
+const path = require("path");
 
 mercadopago.configure({
   access_token:
@@ -118,4 +120,7 @@ module.exports = {
       return res.status(500).end("BAD REQUEST");
     }
   },
+  apiProducts(req, res) {
+    return res.json(JSON.parse(fs.readFileSync(path.resolve(__dirname + "/../products.json"), "utf-8")));
+  }
 };

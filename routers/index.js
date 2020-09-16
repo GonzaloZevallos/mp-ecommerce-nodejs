@@ -17,5 +17,7 @@ router.get("/pending", mpController.pending);
 
 router.post("/notifications", mpController.notifications);
 
+router.get("/api/products", mpController.apiProducts);
+
 
 module.exports = router;
